@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-            <Navigation />
+            <Navigation titulo="Mi primera navegación"/>
           <img src={logo} className="App-logo" alt="logo" />
       </div>
     );
