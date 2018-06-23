@@ -22,9 +22,19 @@ class App extends Component {
 
  const todos = this.state.todos.map((todo, i) => {
       return (
-          <div className="card">
-             { todo.title  }
-          </div>
+           <div className="col-md-4">
+
+                <div className="card">
+                      <div className="card-header">
+                        <h3>   { todo.title  } </h3>
+                      </div>
+                      <div className="card-body">
+                          <p>  { todo.description } </p>
+                      </div>
+                    
+                </div>
+           
+           </div>
       )
   });
 
@@ -32,10 +42,15 @@ class App extends Component {
       <div className="App">
           <nav className="navbar navbar-dark bg-dark">
               <a href="" className="text-white">
-             
+                 Tasks
               </a> 
           </nav>
-            {  todos }
+          
+          <div className="container">
+             <div className="row mt-4">
+                {  todos }
+              </div>
+           </div>
           <img src={logo} className="App-logo" alt="logo" />
       </div>
     );
