@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 
 //Cada componente tienen un método llamado render
 export default class Navigation extends Component {
