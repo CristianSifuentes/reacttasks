@@ -8,6 +8,8 @@ class App extends Component {
     return (
       <div className="App">
             <Navigation titulo="Mi primera navegación"/>
+            <Navigation titulo="Mi segunda navegación"/>
+
           <img src={logo} className="App-logo" alt="logo" />
       </div>
     );
