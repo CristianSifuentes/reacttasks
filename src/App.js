@@ -18,8 +18,21 @@ class App extends Component {
    super();
    this.state = {
       todos
-   }
+   },
+
+   this.handleAddTodo = this.handleAddTodo.bind(this);
  }
+
+ handleAddTodo(todo) {
+  this.setState({
+    todos: [...this.state.todos, todo]
+  })
+}
+
+removeTodo(index) {
+  console.log(index);
+}
+
 
 
   render() {
@@ -27,7 +40,7 @@ class App extends Component {
 
  const todos = this.state.todos.map((todo, i) => {
       return (
-           <div className="col-md-4">
+           <div className="col-md-4" key={i}>
 
                 <div className="card mt-4">
                       <div className="card-header">
@@ -39,6 +52,12 @@ class App extends Component {
                       <div className="card-body">
                           <p>  { todo.description } </p>
                           <p> <mark> { todo.responsable }  </mark>  </p>
+                      </div>
+
+                      <div className="card-footer">
+                          <buttom className="btn btn-danger" onClick={this.removeTodo.bind(this, i)  }>
+                               Delete
+                          </buttom>
                       </div>
                     
                 </div>
@@ -66,7 +85,7 @@ class App extends Component {
               
                <div className="col-md-4 text-center">
                 <img src={logo} className="App-logo" alt="logo" />
-                  <TodoForm/>
+                  <TodoForm onAddTodo= { this.handleAddTodo } />
                 </div>
 
              <div className="col-md-8">
