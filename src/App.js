@@ -31,11 +31,13 @@ class App extends Component {
 
 removeTodo(index) {
   console.log(index);
-  this.setState({
-    todos: this.state.todos.filter((e, i) => {
-      return i !== index
-    })
-  });
+    if(window.confirm('Eliminar?')){
+      this.setState({
+        todos: this.state.todos.filter((e, i) => {
+          return i !== index
+        })
+      });
+    }
 }
 
 
